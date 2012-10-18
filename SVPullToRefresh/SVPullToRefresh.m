@@ -30,11 +30,6 @@ static CGFloat const SVPullToRefreshViewHeight = 60;
 @property (nonatomic, copy) void (^pullToRefreshActionHandler)(void);
 @property (nonatomic, copy) void (^infiniteScrollingActionHandler)(void);
 
-@property (nonatomic, strong) SVPullToRefreshArrow *arrow;
-@property (nonatomic, strong) UIActivityIndicatorView *activityIndicatorView;
-@property (nonatomic, strong) UILabel *titleLabel;
-
-
 @property (nonatomic, unsafe_unretained) UIScrollView *scrollView;
 @property (nonatomic, readwrite) UIEdgeInsets originalScrollViewContentInset;
 @property (nonatomic, strong) UIView *originalTableFooterView;
