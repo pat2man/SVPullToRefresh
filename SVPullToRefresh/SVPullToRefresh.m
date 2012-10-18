@@ -184,12 +184,18 @@ static CGFloat const SVPullToRefreshViewHeight = 60;
 }
 
 - (void)setArrowColor:(UIColor *)newArrowColor {
-	self.arrow.arrowColor = newArrowColor; // pass through
-	[self.arrow setNeedsDisplay];
+    if ([self.arrow isKindOfClass:[SVPullToRefreshArrow class]]) {
+        [(SVPullToRefreshArrow*)self.arrow setArrowColor:newArrowColor]; // pass through
+        [self.arrow setNeedsDisplay];
+    }
 }
 
 - (UIColor *)arrowColor {
-	return self.arrow.arrowColor; // pass through
+    if ([self.arrow isKindOfClass:[SVPullToRefreshArrow class]]) {
+        return [(SVPullToRefreshArrow*)self.arrow arrowColor]; // pass through
+    } else {
+        return nil;
+    }
 }
 
 - (void)setTextColor:(UIColor *)newTextColor {

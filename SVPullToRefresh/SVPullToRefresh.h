@@ -36,6 +36,7 @@ typedef NSUInteger SVPullToRefreshState;
 - (void)triggerRefresh;
 - (void)startAnimating;
 - (void)stopAnimating;
+- (void)setPullToRefreshActionHandler:(void (^)(void))actionHandler;
 
 @end
 
